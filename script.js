@@ -1,32 +1,26 @@
-var res = 0;
-	var cost = 0;
-	var inputArray = document.getElementById("rope-lengths").value;
+// complete the given function
 
-	inputArray = inputArray.split(',').map(Number);
-	console.log(inputArray);
-	for(let i = 0;i< inputArray.length -1;i+=0) {
-		if (inputArray.length == 0) break;
-		inputArray = inputArray.sort((a,b) => b-a);
-		res = inputArray.pop()+ inputArray.pop();
-		cost += res;
-		inputArray[inputArray.length] = res; }
+function palindrome(str){
+ str.toLowerCase();
+ let verdict  = true;
+	for(let i = 0;i<str.length;i++){ 		for( let j = str.length;j>0;j--){
+	if(String[i]!==String[j]){
+ 				verdict = false;
+ 			}
+ 		}
+ 	}
+ 	return verdict;
+ }
+ const string = str.toLowerCase();
+ const len = str.length;
 
-	document.getElementById("result").innerHTML = cost;
-	}
-module.exports = palindrome
+    // loop through half of the string
+    for (let i = 0; i < len / 2; i++) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+        // check if first and last string are same
+        if (string[i] !== string[len - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
